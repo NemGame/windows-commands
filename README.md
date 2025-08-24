@@ -41,6 +41,7 @@
         </tr>
     </tbody>
 </table>
+
 ## ```args <args>```
 ### Just prints out the args given to it, used for debugging
 ## ```cmdat.```
