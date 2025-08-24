@@ -1,30 +1,21 @@
 # Windows commands
 ### My windows commands
 ### All were tested on Windows 10
-### Contents:
-- [args](#args-args)
-- [cmdat.](#cmdat)
-- [cmdat](#cmdat-dir)
-- [csl](#csl)
-- [docs](#docs)
-- [docs_](#docs_)
-- [dup](#dup-filename--foldername)
-- [edit](#edit-filename)
-- [explorer.](#explorer)
-- [hf](#hf-path)
-- [hidefolder](#hidefolder-path)
-- [lst](#lst-dir)
-- [newfile](#newfile-filename-content)
-- [npm_](#npm_-args)
-- [rcmd](#rcmd)
-- [remove](#remove-path)
-- [remove_](#remove_-file)
-- [rename](#rename-file)
-- [rm](#rm-file)
-- [run](#run-command)
-- [sf](#sf-path)
-- [showfolder](#showfolder-path)
-- [vscode](#vscode-args)
+|                                       |                                      |
+|:-------------------------------------:|:------------------------------------:|
+| [args](#args-args)                    | [dup](#dup-filename--foldername)     |
+| [cmdat.](#cmdat)                      | [edit](#edit-filename)               |
+| [cmdat](#cmdat-dir)                   | [explorer.](#explorer)               |
+| [csl](#csl)                           | [hf](#hf-path)                       |
+| [docs](#docs)                         | [hidefolder](#hidefolder-path)       |
+| [docs_](#docs_)                       | [lst](#lst-dir)                      |
+| [newfile](#newfile-filename-content)  | [npm_](#npm_-args)                   |
+| [rcmd](#rcmd)                         | [remove](#remove-path)               |
+| [remove_](#remove_-file)              | [rename](#rename-path)               |
+| [rm](#rm-file)                        | [run](#run-command)                  |
+| [sf](#sf-path)                        | [showfolder](#showfolder-path)       |
+| [vscode](#vscode-args)                |
+
 ## ```args <args>```
 ### Just prints out the args given to it, used for debugging
 ## ```cmdat.```
