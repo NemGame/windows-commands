@@ -1,15 +1,46 @@
 # Windows commands
 ### My windows commands
 ### All were tested on Windows 10
-|                                       |                                      |                                       |                                      |
-|:-------------------------------------:|:------------------------------------:|:-------------------------------------:|:------------------------------------:|
-| [args](#args-args)                    | [dup](#dup-filename--foldername)     | [cmdat.](#cmdat)                      | [edit](#edit-filename)               |
-| [cmdat](#cmdat-dir)                   | [explorer.](#explorer)               | [csl](#csl)                           | [hf](#hf-path)                       |
-| [docs](#docs)                         | [hidefolder](#hidefolder-path)       | [docs_](#docs_)                       | [lst](#lst-dir)                      |
-| [newfile](#newfile-filename-content)  | [npm_](#npm_-args)                   | [rcmd](#rcmd)                         | [remove](#remove-path)               |
-| [remove_](#remove_-file)              | [rename](#rename-path)               | [rm](#rm-file)                        | [run](#run-command)                  |
-| [sf](#sf-path)                        | [showfolder](#showfolder-path)       | [vscode](#vscode-args)                |
-
+<table>
+    <thead>
+        <tr>
+            <th colspan="6">Contents</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="#args-args">args</a></td>
+            <td><a href="#dup-filename--foldername">dup</a></td>
+            <td><a href="#cmdat">cmdat.</a></td>
+            <td><a href="#edit-filename">edit</a></td>
+            <td><a href="#cmdat-dir">cmdat</a></td>
+            <td><a href="#explorer">explorer.</a></td>
+        </tr>
+        <tr>
+            <td><a href="#csl">csl</a></td>
+            <td><a href="#hf-path">hf</a></td>
+            <td><a href="#docs">docs</a></td>
+            <td><a href="#hidefolder-path">hidefolder</a></td>
+            <td><a href="#docs_">docs_</a></td>
+            <td><a href="#lst-dir">lst</a></td>
+        </tr>
+        <tr>
+            <td><a href="#newfile-filename-content">newfile</a></td>
+            <td><a href="#npm_-args">npm_</a></td>
+            <td><a href="#rcmd">rcmd</a></td>
+            <td><a href="#remove-path">remove</a></td>
+            <td><a href="#remove_-file">remove_</a></td>
+            <td><a href="#rename-path">rename</a></td>
+        </tr>
+        <tr>
+            <td><a href="#rm-file">rm</a></td>
+            <td><a href="#run-command">run</a></td>
+            <td><a href="#sf-path">sf</a></td>
+            <td><a href="#showfolder-path">showfolder</a></td>
+            <td><a href="#vscode-args">vscode</a></td>
+        </tr>
+    </tbody>
+</table>
 ## ```args <args>```
 ### Just prints out the args given to it, used for debugging
 ## ```cmdat.```
