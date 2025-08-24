@@ -39,6 +39,7 @@
             <td><a href="#sf-path">sf</a></td>
             <td><a href="#showfolder-path">showfolder</a></td>
             <td><a href="#vscode-args">vscode</a></td>
+            <td><a href="#sizeof-path">sizeof</a></td>
         </tr>
     </tbody>
 </table>
@@ -91,6 +92,11 @@
 ### Shorthand for [showfolder](#showfolder-path)
 ## ```showfolder <path>```
 ### Reveals the path that [hf](#hf-path) and [hidefolder](#hidefolder-path) hid
+## ```sizeof <path>```
+### Returns the size of the object with the given path
+### Files and Folders
+### Supported sizes: bytes, kilobytes, megabytes, gigabytes, terrabytes, petabytes, zettabytes, yottabytes
+### If you need more create an issue and I'll add larger sizes to
 ## ```vscode <?args>```
 ### Just calls ```code <args>``` (by Visual Studio Code)
 ### It runs as expected when written in the file explorer search bar, unlike ```code```
