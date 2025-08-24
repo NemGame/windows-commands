@@ -38,8 +38,8 @@
             <td><a href="#run-command">run</a></td>
             <td><a href="#sf-path">sf</a></td>
             <td><a href="#showfolder-path">showfolder</a></td>
-            <td><a href="#vscode-args">vscode</a></td>
             <td><a href="#sizeof-path">sizeof</a></td>
+            <td><a href="#vscode-args">vscode</a></td>
         </tr>
     </tbody>
 </table>
