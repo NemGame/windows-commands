@@ -1,0 +1,14 @@
+File names and source code includes swearing
+I used MinGW to build
+lst.c - main file, build this
+printfw.h - one of my libraries, it's used for actually writing to the terminal in Unicode (dependency)
+
+Binary: lst.exe
+
+Stuff:
+FUCK.c - the save beforce implementing Unicode
+a.exe - an older build
+build.bat - just builds and runs the file
+update.bat - builds the file and copies it to the directory above
+dir/ - a directory
+fájl.txt - Unicode name file (fájl means "file" in Hungarian)
