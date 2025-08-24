@@ -1,20 +1,14 @@
 # Windows commands
 ### My windows commands
 ### All were tested on Windows 10
-|                                       |                                      |
-|:-------------------------------------:|:------------------------------------:|
-| [args](#args-args)                    | [dup](#dup-filename--foldername)     |
-| [cmdat.](#cmdat)                      | [edit](#edit-filename)               |
-| [cmdat](#cmdat-dir)                   | [explorer.](#explorer)               |
-| [csl](#csl)                           | [hf](#hf-path)                       |
-| [docs](#docs)                         | [hidefolder](#hidefolder-path)       |
-| [docs_](#docs_)                       | [lst](#lst-dir)                      |
-| [newfile](#newfile-filename-content)  | [npm_](#npm_-args)                   |
-| [rcmd](#rcmd)                         | [remove](#remove-path)               |
-| [remove_](#remove_-file)              | [rename](#rename-path)               |
-| [rm](#rm-file)                        | [run](#run-command)                  |
-| [sf](#sf-path)                        | [showfolder](#showfolder-path)       |
-| [vscode](#vscode-args)                |
+|                                       |                                      |                                       |                                      |
+|:-------------------------------------:|:------------------------------------:|:-------------------------------------:|:------------------------------------:|
+| [args](#args-args)                    | [dup](#dup-filename--foldername)     | [cmdat.](#cmdat)                      | [edit](#edit-filename)               |
+| [cmdat](#cmdat-dir)                   | [explorer.](#explorer)               | [csl](#csl)                           | [hf](#hf-path)                       |
+| [docs](#docs)                         | [hidefolder](#hidefolder-path)       | [docs_](#docs_)                       | [lst](#lst-dir)                      |
+| [newfile](#newfile-filename-content)  | [npm_](#npm_-args)                   | [rcmd](#rcmd)                         | [remove](#remove-path)               |
+| [remove_](#remove_-file)              | [rename](#rename-path)               | [rm](#rm-file)                        | [run](#run-command)                  |
+| [sf](#sf-path)                        | [showfolder](#showfolder-path)       | [vscode](#vscode-args)                |
 
 ## ```args <args>```
 ### Just prints out the args given to it, used for debugging
