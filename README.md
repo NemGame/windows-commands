@@ -13,6 +13,7 @@
 - [explorer.](#explorer)
 - [hf](#hf-filename--foldername)
 - [hidefolder](#hidefolder-filename--foldername)
+- [lst](#lst-dir)
 ## ```args <args>```
 ### Just prints out the args given to it, used for debugging
 ## ```cmdat.```
@@ -36,14 +37,31 @@
 ## ```hidefolder <filename / foldername>```
 ### Hides the given element, so that even the file explorer can't see it
 ### You can access it, by writing the path in the search bar
+### Can be reversed with [sf](#sf-filename--foldername) and [showfolder](#showfolder-filename--foldername)
 ## ```lst <?dir>```
 ### Lists the files, folders and unkown things in the given directory, or where it was ran
 ## ```newfile <filename> <?content>```
 ### Creates a new file with the given name
 ### Unless you specify any content it's gonna be empty
 ## ```npm_ <?args>```
-### Shorthand for npm.cmd (by NodeJS) for easier powershell use (mostly for vscode)
+### Shorthand for ```npm.cmd``` (by NodeJS) for easier powershell use (mostly for vscode)
 ## ```rcmd```
 ### Opens a new command prompt in the same directory and closes itself
 ## ```remove <path>```
 ### Removes the path, be it a file or a folder, no discrimination here
+## ```remove_ <file>```
+### Rememberable ```del```
+## ```rename <path>```
+### Rememberable ```ren```
+## ```rm <file>```
+### Rememberable ```del```
+## ```run <command>```
+### Runs the given command in a new command prompt
+### After execution, it waits for the Enter to be pressed and only that
+## ```sf <filename / foldername>```
+### Shorthand for [showfolder](#showfolder-filename--foldername)
+## ```showfolder <filename / foldername>```
+### Reveals the files and folders that [hf](#hf-filename--foldername) and [hidefolder](#hidefolder-filename--foldername) hid
+## ```vscode <args>```
+### Just calls ```code <args>``` (by Visual Studio Code)
+### It runs as expected when written in the file explorer search bar, unlike ```code```
