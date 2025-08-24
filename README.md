@@ -36,3 +36,14 @@
 ## ```hidefolder <filename / foldername>```
 ### Hides the given element, so that even the file explorer can't see it
 ### You can access it, by writing the path in the search bar
+## ```lst <?dir>```
+### Lists the files, folders and unkown things in the given directory, or where it was ran
+## ```newfile <filename> <?content>```
+### Creates a new file with the given name
+### Unless you specify any content it's gonna be empty
+## ```npm_ <?args>```
+### Shorthand for npm.cmd (by NodeJS) for easier powershell use (mostly for vscode)
+## ```rcmd```
+### Opens a new command prompt in the same directory and closes itself
+## ```remove <path>```
+### Removes the path, be it a file or a folder, no discrimination here
