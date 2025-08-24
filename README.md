@@ -90,6 +90,6 @@
 ### Shorthand for [showfolder](#showfolder-path)
 ## ```showfolder <path>```
 ### Reveals the path that [hf](#hf-path) and [hidefolder](#hidefolder-path) hid
-## ```vscode <args>```
+## ```vscode <?args>```
 ### Just calls ```code <args>``` (by Visual Studio Code)
 ### It runs as expected when written in the file explorer search bar, unlike ```code```
