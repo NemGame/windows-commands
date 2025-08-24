@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 
 rem === Ha nincs paraméter, kilépünk ===
 if "%~1"=="" (
-    echo Hasznalat: newfile [fajlnev] [-t "tartalom"]
+    echo Usage: newfile [filename] [content]
     exit /b 1
 )
 
@@ -15,6 +15,7 @@ if "%~2"=="" (
 
 echo %2 > %1
 
-echo "%1" letrehozva
+echo "%1" created
 echo.
-echo Tartalom: %2
+
+echo Content: %2
