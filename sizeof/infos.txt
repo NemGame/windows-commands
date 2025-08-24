@@ -1,0 +1,7 @@
+I used rustc to compile
+I used cargo to manage
+Sadly, there's no profanity here, but that may still change, 
+if I decide to update something and it only works after an hour (or more), 
+because I used %d instead of %f (it happened in C and it still hurts), 
+I'm sure Rust has some equivalent, but as I've been learning the language for only a few days, 
+I haven't found it just yet, but don't worry, I'm sure can do it, without even trying
