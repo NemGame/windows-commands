@@ -10,18 +10,18 @@
     <tbody>
         <tr>
             <td><a href="#args-args">args</a></td>
-            <td><a href="#dup-filename--foldername">dup</a></td>
             <td><a href="#cmdat">cmdat.</a></td>
-            <td><a href="#edit-filename">edit</a></td>
             <td><a href="#cmdat-dir">cmdat</a></td>
-            <td><a href="#explorer">explorer.</a></td>
+            <td><a href="#csl">csl</a></td>
+            <td><a href="#docs">docs</a></td>
+            <td><a href="#docs_">docs_</a></td>
         </tr>
         <tr>
-            <td><a href="#csl">csl</a></td>
+            <td><a href="#dup-filename--foldername">dup</a></td>
+            <td><a href="#edit-filename">edit</a></td>
+            <td><a href="#explorer">explorer.</a></td>
             <td><a href="#hf-path">hf</a></td>
-            <td><a href="#docs">docs</a></td>
             <td><a href="#hidefolder-path">hidefolder</a></td>
-            <td><a href="#docs_">docs_</a></td>
             <td><a href="#lst-dir">lst</a></td>
         </tr>
         <tr>
@@ -45,7 +45,7 @@
 ## ```args <args>```
 ### Just prints out the args given to it, used for debugging
 ## ```cmdat.```
-### Runs the [cmdat](#cmdat-2) command with the current directory
+### Runs the [cmdat](#cmdat-dir) command with the current directory
 ## ```cmdat <dir>```
 ### Opens a new command prompt in the given directory
 ## ```csl```
