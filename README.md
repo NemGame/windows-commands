@@ -1,5 +1,5 @@
 # Windows commands
-## !DISCLAIMER! Some source codes may include swearing (lst does), the .exe and .bat 's don't
+## !DISCLAIMER! Some source codes may include swearing (lst does), the .exe's and .bat's don't
 ### My windows commands
 ### All were tested on Windows 10
 <table>
