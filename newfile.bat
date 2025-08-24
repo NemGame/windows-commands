@@ -1,7 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
 
-rem === Ha nincs paraméter, kilépünk ===
 if "%~1"=="" (
     echo Usage: newfile [filename] [content]
     exit /b 1
@@ -19,3 +18,4 @@ echo "%1" created
 echo.
 
 echo Content: %2
+
