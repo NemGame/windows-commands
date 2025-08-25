@@ -1,2 +1,3 @@
 @echo off
-start cmd /k cd %*
+
+start cmd /k cd /d %*
