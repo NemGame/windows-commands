@@ -95,7 +95,7 @@
 ## ```sizeof <path>```
 ### Returns the size of the file or folder with the given path
 ### Supported sizes: bytes, kilobytes, megabytes, gigabytes, terrabytes, petabytes, zettabytes, yottabytes
-### If you need more create an issue and I'll add larger sizes to
+### If you need more, create an issue and I'll add larger sizes to
 ## ```vscode <?args>```
 ### Just calls ```code <args>``` (by Visual Studio Code)
 ### It runs as expected when written in the file explorer search bar, unlike ```code```
