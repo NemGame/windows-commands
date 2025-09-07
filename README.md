@@ -1,6 +1,7 @@
 # Windows commands
 ## !DISCLAIMER! Some source codes may include swearing (lst does), the .exe's and .bat's don't
 ### My windows commands
+### If a .exe doesn't work, recompile it, I used `gcc` for some, but that needs some dlls, I'll recompile and update them later
 ### All were tested on Windows 10
 <table>
     <thead>
