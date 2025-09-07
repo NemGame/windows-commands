@@ -94,7 +94,7 @@
 ### Reveals the path that [hf](#hf-path) and [hidefolder](#hidefolder-path) hid
 ## ```sizeof <path>```
 ### Returns the size of the file or folder with the given path
-### Supported sizes: bytes, kilobytes, megabytes, gigabytes, terrabytes, petabytes, zettabytes, yottabytes
+### Supported sizes: bytes, kilobytes, megabytes, gigabytes, terrabytes, petabytes, exabytes, zettabytes, yottabytes
 ### If you need more, create an issue and I'll add larger sizes to
 ## ```vscode <?args>```
 ### Just calls ```code <args>``` (by Visual Studio Code)
