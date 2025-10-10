@@ -11,23 +11,31 @@
     </thead>
     <tbody>
         <tr>
+            <td><a href="#adminhere-path">adminhere</a></td>
             <td><a href="#args-args">args</a></td>
+            <td><a href="#boop">boop</a></td>
             <td><a href="#cmdat">cmdat.</a></td>
             <td><a href="#cmdat-dir">cmdat</a></td>
             <td><a href="#csl">csl</a></td>
-            <td><a href="#docs">docs</a></td>
-            <td><a href="#docs_">docs_</a></td>
         </tr>
         <tr>
+            <td><a href="#docs">docs</a></td>
+            <td><a href="#docs_">docs_</a></td>
             <td><a href="#dup-filename--foldername">dup</a></td>
             <td><a href="#edit-filename">edit</a></td>
             <td><a href="#explorer">explorer.</a></td>
             <td><a href="#hf-path">hf</a></td>
-            <td><a href="#hidefolder-path">hidefolder</a></td>
-            <td><a href="#lst-dir">lst</a></td>
         </tr>
         <tr>
+            <td><a href="#hidefolder-path">hidefolder</a></td>
+            <td><a href="#isadmin">isadmin</a></td>
+            <td><a href="#ls-dir">ls</a></td>
+            <td><a href="#lst-dir">lst</a></td>
+            <td><a href="#music">music</a></td>
             <td><a href="#newfile-filename-content">newfile</a></td>
+        </tr>
+        <tr>
+            <td><a href="#no">no</a></td>
             <td><a href="#npm_-args">npm_</a></td>
             <td><a href="#rcmd">rcmd</a></td>
             <td><a href="#remove-path">remove</a></td>
@@ -37,10 +45,16 @@
         <tr>
             <td><a href="#rm-file">rm</a></td>
             <td><a href="#run-command">run</a></td>
+            <td><a href="#runq-command">runq</a></td>
+            <td><a href="#runqw-command">runqw</a></td>
             <td><a href="#sf-path">sf</a></td>
             <td><a href="#showfolder-path">showfolder</a></td>
+        </tr>
+        <tr>
             <td><a href="#sizeof-path">sizeof</a></td>
             <td><a href="#vscode-args">vscode</a></td>
+            <td><a href="#ye">ye</a></td>
+            <td><a href="#zene">zene</a></td>
         </tr>
     </tbody>
 </table>
@@ -87,8 +101,11 @@
 ## ```rm <file>```
 ### Rememberable ```del```
 ## ```run <command>```
-### Runs the given command in a new command prompt
-### After execution, it waits for the Enter to be pressed and only that
+### Runs the given command and waits for specifically the return key to be pressed
+## `runq <command>`
+### Runs the given command and instantly quits
+## `runqw <command>`
+### Runs the given command, waits for the return key to be pressed, then quits
 ## ```sf <path>```
 ### Shorthand for [showfolder](#showfolder-path)
 ## ```showfolder <path>```
@@ -100,3 +117,19 @@
 ## ```vscode <?args>```
 ### Just calls ```code <args>``` (by Visual Studio Code)
 ### It runs as expected when written in the file explorer search bar, unlike ```code```
+## `adminhere <?path>`
+### It opens a new command prompt (terminal) window, the path by default is the current working directory
+## `isadmin`
+### Returns "ye" if user has admin rights, otherwise returns "no"
+## `boop`
+### Beeps
+## `ls <?dir>`
+### Lists the contents of the given directory, if no path is given, path will be the current working directory
+## `music`
+### Navigates to the user's music directory
+## `no`
+### Doesn't do anything
+## `ye`
+### Returns ye
+## `zene`
+### Alias for [music](#music)
