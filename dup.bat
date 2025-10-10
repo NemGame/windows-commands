@@ -7,6 +7,9 @@ if "%_path%" == "" (
 	exit /b
 )
 
+if "%_path:~-1%"=="\" set "_path=%_path:~0,-1%"
+for %%A in ("%_path%") do set "_path=%%~fA"
+
 if "%_name%" == "" (
 	set "_name=%~1_copy"
 )
@@ -20,4 +23,5 @@ if exist "%_path%" (
 ) else (
 	echo Nincs ilyen file
 )
+
 
