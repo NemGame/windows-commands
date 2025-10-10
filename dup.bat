@@ -13,10 +13,11 @@ if "%_name%" == "" (
 
 if exist "%_path%" (
 	if exist "%_path%\" (
-		robocopy "%_path%" "%_name%" /E /COPY:DATS /R:1 /W:1 >nul
+		robocopy "%_path%" "%_name%" /E /COPY:DAT /R:1 /W:1 >nul
 	) else (
 		copy "%_path%" "%_name%" >nul
 	)
 ) else (
 	echo Nincs ilyen file
 )
+
