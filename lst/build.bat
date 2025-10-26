@@ -1,3 +1,3 @@
 @echo off
-gcc lst.c -o lst.exe
-.\lst.exe
+gcc -o lst.exe lst.c -Wl,--subsystem,console -lmingw32 -lshell32
+.\lst.exe %*
