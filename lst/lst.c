@@ -5,7 +5,9 @@
 #include <string.h>
 #include <direct.h>
 #include <wchar.h>
-#include "printfw.h"
+#include <my/printfw.h>
+#include <my/table.h>
+#include <shellapi.h>
 
 wchar_t **dir(wchar_t *path, int *count) {
     WIN32_FIND_DATAW findData;
@@ -95,7 +97,8 @@ int ImGonnaFuckYourMomAgain(wchar_t ***list, int *count, wchar_t *path) {
     return 0;
 }
 
-int main(int argc, wchar_t **argv) {
+int wmain(int argc, wchar_t *argv[]) {
+    for (int i = 0; i < argc; ++i) if (wcscmp(argv[i], L"/") == 0) return 0;
     wchar_t *path = argc > 1 ? argv[1] : L".";
 
     int count = 0;
@@ -129,6 +132,21 @@ int main(int argc, wchar_t **argv) {
         free(content[i]);
         free(fullpath);
     }
+
+    if (ffcount + fcount + fffcount == 0) {
+        printf("The given folder doesn't contain anything");
+        return 0;
+    }
+
+    for (int i = 0; i < argc; ++i) {
+        if (wcscmp(argv[i], L"/l") == 0) {
+            printCommandTableW(folders, ffcount, 90);
+            printCommandTableW(files, fcount, 90);
+            printCommandTableW(fucker, fffcount, 90);
+            return 0;
+        }
+    }
+
     printf("=========================\n");
     printList(folders, ffcount);
     freeList(folders, ffcount);
@@ -141,4 +159,13 @@ int main(int argc, wchar_t **argv) {
     printf("=========================\n");
 
     return 0;
+}
+
+int main(int argc, char **argv) {
+    LPWSTR *args = CommandLineToArgvW(GetCommandLineW(), &argc);
+    if (args == NULL) return 1;
+    int res = wmain(argc, args);
+    LocalFree(args);
+
+    return res;
 }
