@@ -95,6 +95,7 @@
 ### Can be reversed with [sf](#sf-path) and [showfolder](#showfolder-path)
 ## ```lst <?dir>```
 ### Lists the files, folders and unkown things in the given directory, or where it was ran
+### For the rest of the arguments, use `lst /?`, `lst -help` or `lst --help`
 ## ```newfile <filename> <?content>```
 ### Creates a new file with the given name
 ### Unless you specify any content it's gonna be empty
