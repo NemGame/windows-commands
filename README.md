@@ -24,7 +24,7 @@
             <td><a href="#docs">docs</a></td>
             <td><a href="#docs_">docs_</a></td>
             <td><a href="#dup-filename--foldername">dup</a></td>
-            <td><a href="#e.">e.</a></td>
+            <td><a href="#e">e.</a></td>
             <td><a href="#edit-filename">edit</a></td>
         </tr>
         <tr>
