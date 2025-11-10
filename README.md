@@ -41,22 +41,25 @@
             <td><a href="#no">no</a></td>
             <td><a href="#npm_-args">npm_</a></td>
             <td><a href="#rcmd">rcmd</a></td>
-            <td><a href="#remove-path">remove</a></td>
+            <td><a href="#read-filename">read</a></td>
         </tr>
         <tr>
+            <td><a href="#remove-path">remove</a></td>
             <td><a href="#remove_-file">remove_</a></td>
             <td><a href="#rename-path">rename</a></td>
             <td><a href="#rm-file">rm</a></td>
             <td><a href="#run-command">run</a></td>
             <td><a href="#runq-command">runq</a></td>
-            <td><a href="#runqw-command">runqw</a></td>
         </tr>
         <tr>
+            <td><a href="#runqw-command">runqw</a></td>
             <td><a href="#sf-path">sf</a></td>
             <td><a href="#showfolder-path">showfolder</a></td>
             <td><a href="#sizeof-path">sizeof</a></td>
             <td><a href="#vscode-args">vscode</a></td>
             <td><a href="#ye">ye</a></td>
+        </tr>
+        <tr>
             <td><a href="#zene">zene</a></td>
         </tr>
     </tbody>
@@ -99,6 +102,8 @@
 ### Shorthand for ```npm.cmd``` (by NodeJS) for easier powershell use (mostly for vscode)
 ## ```rcmd```
 ### Opens a new command prompt in the same directory and closes itself
+## ```read <filename>```
+### Prints the headers of the MP4 file
 ## ```remove <path>```
 ### Removes the path, be it a file or a folder, no discrimination here
 ## ```remove_ <file>```
