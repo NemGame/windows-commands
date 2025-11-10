@@ -14,44 +14,45 @@
         <tr>
             <td><a href="#adminhere-path">adminhere</a></td>
             <td><a href="#args-args">args</a></td>
+            <td><a href="#balu">balu</a></td>
             <td><a href="#boop">boop</a></td>
             <td><a href="#cmdat">cmdat.</a></td>
             <td><a href="#cmdat-dir">cmdat</a></td>
-            <td><a href="#csl">csl</a></td>
         </tr>
         <tr>
+            <td><a href="#csl">csl</a></td>
             <td><a href="#docs">docs</a></td>
             <td><a href="#docs_">docs_</a></td>
             <td><a href="#dup-filename--foldername">dup</a></td>
             <td><a href="#edit-filename">edit</a></td>
             <td><a href="#explorer">explorer.</a></td>
-            <td><a href="#hf-path">hf</a></td>
         </tr>
         <tr>
+            <td><a href="#hf-path">hf</a></td>
             <td><a href="#hidefolder-path">hidefolder</a></td>
             <td><a href="#isadmin">isadmin</a></td>
             <td><a href="#ls-dir">ls</a></td>
             <td><a href="#lst-dir">lst</a></td>
             <td><a href="#music">music</a></td>
-            <td><a href="#newfile-filename-content">newfile</a></td>
         </tr>
         <tr>
+            <td><a href="#newfile-filename-content">newfile</a></td>
             <td><a href="#no">no</a></td>
             <td><a href="#npm_-args">npm_</a></td>
             <td><a href="#rcmd">rcmd</a></td>
             <td><a href="#remove-path">remove</a></td>
             <td><a href="#remove_-file">remove_</a></td>
-            <td><a href="#rename-path">rename</a></td>
         </tr>
         <tr>
+            <td><a href="#rename-path">rename</a></td>
             <td><a href="#rm-file">rm</a></td>
             <td><a href="#run-command">run</a></td>
             <td><a href="#runq-command">runq</a></td>
             <td><a href="#runqw-command">runqw</a></td>
             <td><a href="#sf-path">sf</a></td>
-            <td><a href="#showfolder-path">showfolder</a></td>
         </tr>
         <tr>
+            <td><a href="#showfolder-path">showfolder</a></td>
             <td><a href="#sizeof-path">sizeof</a></td>
             <td><a href="#vscode-args">vscode</a></td>
             <td><a href="#ye">ye</a></td>
@@ -62,6 +63,8 @@
 
 ## ```args <args>```
 ### Just prints out the args given to it, used for debugging
+## ```balu```
+### A WIP command line file explorer
 ## ```cmdat.```
 ### Runs the [cmdat](#cmdat-dir) command with the current directory
 ## ```cmdat <dir>```
