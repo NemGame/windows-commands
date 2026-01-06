@@ -1,9 +1,9 @@
 # Windows commands
-## !DISCLAIMER! Some source codes may include swearing (lst does), proceed with caution
+## !DISCLAIMER! Some source codes may include swearing (lsto does), proceed with caution
 ### My windows commands
 ### If a .exe doesn't work, recompile it, I used `gcc` for some, but that needs some dlls, I'll recompile and update them later
 ### All were tested on Windows 10
-## The `my/` includes can be found [here](https://github.com/NemGame/C-modules)
+## The `my/` and `cpp/` (shortened `my/cpp/`) includes can be found [here](https://github.com/NemGame/C-modules)
 <table>
     <thead>
         <tr>
