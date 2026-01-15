@@ -14,6 +14,8 @@
 #include <cmath>
 #include <string_view>
 #include <cctype>
+#include <fstream>
+#include <cstdio>
 
 using namespace std;
 namespace fs = std::filesystem;
@@ -32,7 +34,8 @@ const vector<wstring> argvToVector() {
             MultiByteToWideChar(CP_UTF8, 0, __argv[i], -1, &w[0], len);
             if (!w.empty() && w.back() == L'\0') w.pop_back();
             args.push_back(move(w));
-        } else {
+        }
+        else {
             args.push_back(L"");
         }
     }
@@ -46,7 +49,8 @@ const int PrintHelp() {
             int cw = TableConsoleWidth();
             double c = floor(cw / 1.1);
             width = static_cast<int>(min(c, cw - 10));
-        }catch (const exception&) {}
+        }
+        catch (const exception&) {}
         wstring h = format(LR"(Lists the contents of the given/current directory.
 
 Parameters:
@@ -57,6 +61,9 @@ Parameters:
     -debug                         |    Shows some pre-runtime infos, such as path
     -deep-debug                    |    Different from -debug, it shows runtime infos, such as item load and suppressed errors
     --version                      |    Shows the version of the program
+    --call, --c [param]            |    Run with every item, {{name}} is replaced with full path
+    --call-before, --cb            |    When using --call, places the item name after the command output
+    --call-between, --cbw          |    What to print between --call 's and the item's name, default is " " (space)
     --type [files,folders,unknown] |    Filters the output by type, multiple allowed with separator ','
     |   Shorthands: files = f, file; folders = ff, dir, folder; unknown = fff, u, fuck
     |
@@ -91,10 +98,10 @@ bool IsFullPath(const wstring& path) {
     return regex_search(path, drive_regex);
 }
 
-int PrintTables(const vector<wstring>& dirs, const vector<wstring>& files, const vector<wstring>& heh) {
-    if (!dirs.empty()) PrintTable(dirs, 0.8);
-    if (!files.empty()) PrintTable(files, 0.8);
-    if (!heh.empty()) PrintTable(heh, 0.8);
+int PrintTables(const vector<wstring>& dirs, const vector<wstring>& files, const vector<wstring>& heh, const int filtered[3]) {
+    if (!(dirs.empty() || filtered[0])) PrintTable(dirs, 0.8);
+    if (!(files.empty() || filtered[1])) PrintTable(files, 0.8);
+    if (!(heh.empty() || filtered[2])) PrintTable(heh, 0.8);
     return 0;
 }
 
@@ -176,7 +183,32 @@ bool CheckFilter(const wstring_view text,
     return true;
 }
 
-class Settings{
+wstring unescape(const wstring& s)
+{
+    wstring res;
+    wstring::const_iterator it = s.begin();
+    while (it != s.end())
+    {
+        wchar_t c = *it++;
+        if (c == '\\' && it != s.end())
+        {
+            switch (*it++) {
+            case '\\': c = '\\'; break;
+            case 'n': c = '\n'; break;
+            case 't': c = '\t'; break;
+                // all other escapes
+            default:
+                // return it as is
+                c = *(it - 1);
+            }
+        }
+        res += c;
+    }
+
+    return res;
+}
+
+class Settings {
 public:
     bool headers = false;
     bool decoration = true;
@@ -184,9 +216,33 @@ public:
     bool deep_debug = false;
     bool show[3] = { true, true, true };
     bool table = false;
+    wstring tocall;
+    wstring callbetween = L" ";
+	bool call_tocall_before = false;
 };
 
-const double version = 0.3;
+const double version = 0.4;
+
+void printc(const wstring& item, const fs::path& dirPath, const Settings& settings) {
+    wstring command = replacew(settings.tocall, L"{name}", (dirPath / item).wstring());
+    if (settings.debug) wcout << L"Calling: " << command << endl;
+    // Output format: {filename} {to_call output}
+    std::string commandA(command.begin(), command.end());
+    int ret = system((commandA + " > temp_output.txt").c_str());
+    wstring output;
+    {
+        wifstream infile(L"temp_output.txt");
+        wstring line;
+        wstringstream ss;
+        while (getline(infile, line)) {
+            ss << line << L"\n";
+        }
+        output = ss.str();
+		output.pop_back(); // remove last \n
+    }
+    _wremove(L"temp_output.txt");
+    printfwl(format(L"{}{}{}", settings.call_tocall_before ? output : item, replacew(settings.callbetween, L"\\t", L"\t"), settings.call_tocall_before ? item : output));
+}
 
 int main() {
     vector<wstring> args = argvToVector();
@@ -248,6 +304,16 @@ int main() {
             const wstring nextarg = args[++i];
             regex.push_back(splitw(nextarg));
         }
+        else if (arg == L"--call" || arg == L"--c") {
+            if (islast) break;
+            settings.tocall = args[++i];
+        }
+		else if (arg == L"--call-before" || arg == L"--cb") {
+            settings.call_tocall_before = true;
+        }
+        else if (arg == L"--call-between" || arg == L"--cbw") {
+            settings.callbetween = unescape(args[++i]);
+        }
         else {
             path = (IsFullPath(arg) ? L"" : fs::current_path().wstring()) + L'\\' + arg;
         }
@@ -265,7 +331,7 @@ int main() {
         cout << "The given path is not a valid directory." << endl;
         return 1;
     }
-	vector<wstring> dirs, files, huh;
+    vector<wstring> dirs, files, huh;
 
     for (const auto& entry : fs::directory_iterator(dirPath)) {
         const wstring path = entry.path().filename().wstring();
@@ -302,22 +368,35 @@ int main() {
         return 0;
     }
 
-    if (settings.table) return PrintTables(dirs, files, huh);
+    if (settings.table) return PrintTables(dirs, files, huh, new int[3] {showDirs,showFiles,showHuh});
 
     if (showDirs) {
         if (settings.decoration) {
             printfwl(settings.headers ? L"=========Folders=========" : L"=========================");
         }
-        for (const wstring& d : dirs) printfwl(d);
+        for (const wstring& d : dirs) {
+            if (settings.tocall.empty()) {
+                printfwl(d);
+            }
+            else {
+                printc(d, dirPath, settings);
+            }
+        }
         if (showFiles || showHuh) cout << endl;
     }
-
     if (showFiles) {
         if (settings.decoration) {
             if (settings.headers) printfwl(L"==========Files==========");
             else if (!showDirs) printfwl(L"=========================");
         }
-        for (const wstring& f : files) printfwl(f);
+        for (const wstring& f : files) {
+            if (settings.tocall.empty()) {
+                printfwl(f);
+            }
+            else {
+                printc(f, dirPath, settings);
+            }
+        }
         if (showHuh) cout << endl;
     }
 
@@ -327,7 +406,12 @@ int main() {
             else if (!showDirs && !showFiles) printfwl(L"=========================");
         }
         for (size_t i = 0; i < huh.size(); ++i) {
-            printfwl(huh[i]);
+            if (settings.tocall.empty()) {
+                printfwl(huh[i]);
+            }
+            else {
+                printc(huh[i], dirPath, settings);
+            }
         }
     }
     if (settings.decoration) {
