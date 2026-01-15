@@ -91,6 +91,8 @@
 ### Opens the given file in notepad
 ## ```explorer.```
 ### Opens the file explorer in the current directory
+## ```getsys```
+### Retrieves some system information on windows and linux, like RAM, motherboard, CPU & it's architecture
 ## ```hf <path>```
 ### Shorthand for [hidefolder](#hidefolder-path)
 ## ```hidefolder <path>```
@@ -100,6 +102,8 @@
 ## ```lst <?dir>```
 ### Lists the files, folders and unkown things in the given directory, or where it was ran
 ### For the rest of the arguments, use `lst /?`, `lst -help` or `lst --help`
+## ```lsto <?dir>```
+### The old version of [lst](#lst-dir) written in C
 ## ```newfile <filename> <?content>```
 ### Creates a new file with the given name
 ### Unless you specify any content it's gonna be empty
@@ -134,6 +138,9 @@
 ## ```vscode <?args>```
 ### Just calls ```code <args>``` (by Visual Studio Code)
 ### It runs as expected when written in the file explorer search bar, unlike ```code```
+## `wh <?args>`
+### Runs the given args until interrupted
+### Why? Becuase `wh ye`
 ## `adminhere <?path>`
 ### It opens a new command prompt (terminal) window, the path by default is the current working directory
 ## `isadmin`
@@ -144,6 +151,8 @@
 ### Lists the contents of the given directory, if no path is given, path will be the current working directory
 ## `music`
 ### Navigates to the user's music directory
+## `mycmds`
+### Navigates to where these commands are installed if you used the provided installer (%userprofile%\source\repos\MyCoolCommands)
 ## `no`
 ### Doesn't do anything
 ## `ye`
