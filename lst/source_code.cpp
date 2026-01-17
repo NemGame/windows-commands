@@ -98,10 +98,20 @@ bool IsFullPath(const wstring& path) {
     return regex_search(path, drive_regex);
 }
 
-int PrintTables(const vector<wstring>& dirs, const vector<wstring>& files, const vector<wstring>& heh, const int filtered[3]) {
-    if (!(dirs.empty() || filtered[0])) PrintTable(dirs, 0.8);
-    if (!(files.empty() || filtered[1])) PrintTable(files, 0.8);
-    if (!(heh.empty() || filtered[2])) PrintTable(heh, 0.8);
+int PrintTables(const vector<wstring>& dirs, const vector<wstring>& files, const vector<wstring>& heh, const int canPrint[3], const bool headers=false) {
+	int width = TableConsoleWidth();
+    if (canPrint[0]) {
+        if (headers) wcout << TableCenterText(L"Folders:", width, false) << endl;
+        PrintTable(dirs, 0.8);
+    }
+    if (canPrint[1]) {
+        if (headers) wcout << TableCenterText(L"Files:", width, false) << endl;
+        PrintTable(files, 0.8);
+    }
+    if (canPrint[2]) {
+        if (headers) wcout << TableCenterText(L"Heh:", width, false) << endl;
+        PrintTable(heh, 0.8);
+    }
     return 0;
 }
 
@@ -221,7 +231,7 @@ public:
 	bool call_tocall_before = false;
 };
 
-const double version = 0.4;
+const double version = 0.5;
 
 void printc(const wstring& item, const fs::path& dirPath, const Settings& settings) {
     wstring command = replacew(settings.tocall, L"{name}", (dirPath / item).wstring());
@@ -368,7 +378,7 @@ int main() {
         return 0;
     }
 
-    if (settings.table) return PrintTables(dirs, files, huh, new int[3] {showDirs,showFiles,showHuh});
+    if (settings.table) return PrintTables(dirs, files, huh, new int[3] {showDirs,showFiles,showHuh}, settings.headers);
 
     if (showDirs) {
         if (settings.decoration) {
